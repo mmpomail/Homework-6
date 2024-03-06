@@ -18,25 +18,25 @@ public class StatsService {
     }
 
     public int maxSales(int[] salesMonth) {
-        int minMonth = 0; // номер месяца с максимальными продажами среди просмотренных ранее
+        int maxMonth = 0;
 
         for (int i = 0; i < salesMonth.length; i++) {
-            if (salesMonth[i] >= salesMonth[minMonth]) { // значит, в рассматриваемом i-м месяце продаж больше
-                minMonth = i; // запомним его как максимальный
+            if (salesMonth[i] >= salesMonth[maxMonth]) {
+                maxMonth = i;
             }
         }
-        return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
+        return maxMonth + 1;
     }
 
     public int minSales(int[] salesMonth) {
-        int minMonth = 0; // номер месяца с минимальными продажами среди просмотренных ранее
+        int minMonth = 0;
 
         for (int i = 0; i < salesMonth.length; i++) {
-            if (salesMonth[i] <= salesMonth[minMonth]) { // значит, в рассматриваемом i-м месяце продаж меньше
-                minMonth = i; // запомним его как минимальный
+            if (salesMonth[i] <= salesMonth[minMonth]) {
+                minMonth = i;
             }
         }
-        return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
+        return minMonth + 1;
     }
 
     public static int lowerThanAverage(int[] salesMonth) {
